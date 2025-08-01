@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+    <meta name="description" content="I'm Aizaz Ahmed, a frontend developer and UI/UX designer. This is my personal portfolio website showcasing my skills and projects.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Aizaz Ahmed | Software Engineer Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/img/favicon_edited.png" type="image/png">
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Utopia Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <style>
+        /* ==================== ABOUT ==================== */
+        .about__container {
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .about__img {
+            width: 350px;
+            border-radius: 1.5rem;
+            justify-self: center;
+        }
+
+        .about__info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about__info-box {
+            background-color: var(--container-color);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.75rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .about__info-title {
+            font-size: var(--h2-font-size);
+            font-weight: var(--font-medium);
+            color: var(--title-color);
+        }
+
+        .about__info-name {
+            font-size: var(--smaller-font-size);
+        }
+
+        .about__description {
+            padding: 0 4rem 0 0;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background-color: var(--container-color);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 2rem;
+        }
+
+        .footer__container {
+            padding: 2rem 0 6rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .footer__info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer__title {
+            font-size: var(--h2-font-size);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__subtitle {
+            font-size: var(--small-font-size);
+            color: var(--text-color);
+        }
+
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+
+        .footer__link {
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .footer__link:hover {
+            color: var(--title-color-dark);
+        }
+
+        .footer__socials {
+            display: flex;
+            justify-content: flex-end;
+            column-gap: 1.25rem;
+        }
+
+        .footer__social {
+            background-color: var(--container-color);
+            color: var(--text-color);
+            font-size: 1.5rem;
+            padding: 0.4rem;
+            border-radius: 0.5rem;
+            display: inline-flex;
+            transition: color 0.3s;
+        }
+
+        .footer__social:hover {
+            color: var(--title-color-dark);
+        }
+
+        .footer__copy {
+            display: block;
+            margin-top: 4.5rem;
+            color: var(--text-color);
+            text-align: center;
+            font-size: var(--smaller-font-size);
+        }
+
+        /* For medium devices */
+        @media screen and (max-width: 768px) {
+            .footer__container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .footer__info,
+            .footer__links,
+            .footer__socials {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .footer__links {
+                flex-direction: row;
+                column-gap: 2rem;
+            }
+            
+            .footer__socials {
+                justify-content: center;
+            }
+            
+            .about__description {
+                padding: 0;
+            }
+        }
+
+        /* For small devices */
+        @media screen and (max-width: 576px) {
+            .about__info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Aizaz Ahmed</a>
+
+            <div data-aos="fade-in" class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file nav__icon"></i> Skills
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#services" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme Change button -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div data-aos="fade-left" class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.instagram.com/aizazofficial_01/"
+                            target="_blank" class="home__social-icon" aria-label="Instagram">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                        <a href="https://github.com/aizazahmed001" target="_blank" class="home__social-icon" aria-label="GitHub">
+                            <i class="uil uil-github-alt"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/aizazahmed098/" target="_blank" class="home__social-icon" aria-label="LinkedIn">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </a>
+                    </div>
+
+                    <div data-aos="fade-right" class="home__img">
+                        <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
+                            <mask id="mask0" mask-type="alpha">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
+                                130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
+                                97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
+                                0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                            </mask>
+                            <g mask="url(#mask0)">
+                                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
+                                165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
+                                129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
+                                -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+
+                                <image class="home__blob-img" x="20" y="15" href="assets/img/perfil.png" alt="Aizaz Ahmed profile picture" />
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Hi!<span class="wave" role="img" aria-label="waving hand">👋</span>, I'm Aizaz Ahmed</h1>
+                        <h3 class="home__subtitle">
+                            <span class="auto-input"></span>
+                        </h3>
+                        <p class="home__description">
+                            Frontend developer with high level experience in web design and development, producing quality work.
+                        </p>
+                        <a href="#contact" class="button button--flex">
+                            Contact Me <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">My Introduction</span>
+
+            <div data-aos="fade-left" class="about__container container grid">
+                <img src="assets/img/about.jpg" alt="Aizaz Ahmed working on laptop" class="about__img" />
+
+                <div class="about__data">
+                    <p class="about__description">
+                        Hi I'm Aizaz Ahmed. I'm 21 years old
+
+                        passionate Software Engineering student and <b>Front-End Web Developer</b> with a strong focus on <b>UI/UX design</b>. I love crafting clean, responsive, and user-friendly digital experiences.
+                    </p>
+
+                    <div class="about__info">
+                        <div class="about__info-box">
+                            <span class="about__info-title">02+</span>
+                            <span class="about__info-name">Years <br>experience</span>
+                        </div>
+                        <div class="about__info-box">
+                            <span class="about__info-title">20+</span>
+                            <span class="about__info-name">Completed <br>projects</span>
+                        </div>
+                        <div class="about__info-box">
+                            <span class="about__info-title">24/7</span>
+                            <span class="about__info-name">Online<br>support</span>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a download="" href="assets/pdf/CV.pdf" class="button button--flex">
+                            Download CV <i class="uil uil-download-alt button__icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SKILLS ====================-->
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My Technical Level</span>
+
+            <div data-aos="fade-up" class="skills__container container grid">
+                <div>
+                    <!--==================== SKILL 1 ====================-->
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                            <i class="uil uil-brackets-curly skills__icon"></i>
+
+                            <div>
+                                <h1 class="skills__title">Frontend Development</h1>
+                                <span class="skills__subtitle">More than 2 years</span>
+                            </div>
+
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/html.png" class="skills__logo" width="25" alt="HTML5 logo"> HTML5
+                                    </h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/css.png" class="skills__logo" width="20" alt="CSS3 logo"> CSS3
+                                    </h3>
+                                    <span class="skills__number">70%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/javascript.png" class="skills__logo" width="20" alt="JavaScript logo"> JavaScript
+                                    </h3>
+                                    <span class="skills__number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!--==================== SKILL 2 ====================-->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-swatchbook skills__icon"></i>
+
+                            <div>
+                                <h1 class="skills__title">Design</h1>
+                                <span class="skills__subtitle">More than 1.5 years</span>
+                            </div>
+
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/figma.png" class="skills__logo" width="20" alt="Figma logo"> Figma
+                                    </h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__figma"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/ps.png" class="skills__logo" width="20" alt="Photoshop logo"> Adobe Photoshop
+                                    </h3>
+                                    <span class="skills__number">42%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__photoshop"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">
+                                        <img src="assets/img/illustrator.png" class="skills__logo" width="20" alt="Illustrator logo"> Adobe Illustrator
+                                    </h3>
+                                    <span class="skills__number">62%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__illustrator"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SERVICES ====================-->
+        <section class="services section" id="services">
+            <h2 class="section__title">Services</h2>
+            <span class="section__subtitle">What I Offer</span>
+
+            <div data-aos="fade-right" class="services__container container grid">
+                <!--==================== SERVICES 1 ====================-->
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-web-grid services__icon"></i>
+                        <h3 class="services__title">UI/UX <br> Design</h3>
+                    </div>
+
+                    <span class="button button--flex button--small button--link services__button">
+                        View More
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">UI/UX <br> Design</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>I design intuitive user interfaces</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Create wireframes and prototypes</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Design UX element interactions</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Position your company brand</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--==================== SERVICES 2 ====================-->
+                <div class="services__content">
+                    <div>
+                        <i class="uil uil-arrow services__icon"></i>
+                        <h3 class="services__title">Frontend <br> Development</h3>
+                    </div>
+
+                    <span class="button button--flex button--small button--link services__button">
+                        View More
+                        <i class="uil uil-arrow-right button__icon"></i>
+                    </span>
+
+                    <div class="services__modal">
+                        <div class="services__modal-content">
+                            <h4 class="services__modal-title">Frontend <br> Development</h4>
+                            <i class="uil uil-times services__modal-close"></i>
+
+                            <ul class="services__modal-services grid">
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>I develop responsive user interfaces</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Web application development</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Performance optimization</p>
+                                </li>
+                                <li class="services__modal-service">
+                                    <i class="uil uil-check-circle services__modal-icon"></i>
+                                    <p>Cross-browser compatibility</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PORTFOLIO ====================-->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Portfolio</h2>
+            <span class="section__subtitle">Most recent work</span>
+
+            <div data-aos="fade-right" class="portfolio__container container swiper">
+                <div class="swiper-wrapper">
+                    <!--==================== PORTFOLIO 1 ====================-->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio1.jpg" alt="Modern website project" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Modern Website</h3>
+                            <p class="portfolio__description">Responsive website with UI components and animated interactions.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!--==================== PORTFOLIO 2 ====================-->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio2.jpg" alt="Brand design project" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Brand Design</h3>
+                            <p class="portfolio__description">Complete brand identity with logo, colors and typography.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!--==================== PORTFOLIO 3 ====================-->
+                    <div class="portfolio__content grid swiper-slide">
+                        <img src="assets/img/portfolio3.jpg" alt="E-commerce project" class="portfolio__img">
+
+                        <div class="portfolio__data">
+                            <h3 class="portfolio__title">Online Store</h3>
+                            <p class="portfolio__description">E-commerce website with product catalog and checkout.</p>
+                            <a href="#" class="button button--flex button--small portfolio__button">
+                                Demo
+                                <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swiper Navigation -->
+                <div class="swiper-button-next">
+                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+                </div>
+                <div class="swiper-button-prev">
+                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+                </div>
+
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!--==================== PROJECT IN MIND ====================-->
+        <section class="project section">
+            <div data-aos="fade-in" class="project__bg">
+                <div class="project__container container grid">
+                    <div class="project__data">
+                        <h2 class="project__title">Have a project in mind?</h2>
+                        <p class="project__description">Contact me now to discuss your new project.</p>
+                        <a href="#contact" class="button button--flex button--blue">
+                            Contact Me
+                            <i class="uil uil-message project__icon button__icon"></i>
+                        </a>
+                    </div>
+
+                    <img src="assets/img/project.png" alt="Project collaboration illustration" class="project__img">
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ME ====================-->
+        <section class="contact section" id="contact">
+            <h2 class="section__title">Contact Me</h2>
+            <span class="section__subtitle">Get in touch</span>
+
+            <div data-aos="fade-in" class="contact__container container grid">
+                <div>
+                    <div class="contact__information">
+                        <i class="uil uil-envelope contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Email</h3>
+                            <span class="contact__subtitle">aizazahmed098@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact__information">
+                        <i class="uil uil-phone contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Phone</h3>
+                            <span class="contact__subtitle">+92 300 8925097</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://formsubmit.co/aizazahmed098@gmail.com" method="POST" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="contact-name" class="contact__label">Name</label>
+                            <input type="text" name="name" id="contact-name" class="contact__input" required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="contact-email" class="contact__label">Email</label>
+                            <input type="email" name="email" id="contact-email" class="contact__input" required>
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="contact-project" class="contact__label">Project</label>
+                        <input type="text" name="project" id="contact-project" class="contact__input">
+                    </div>
+                    <div class="contact__content">
+                        <label for="contact-message" class="contact__label">Message</label>
+                        <textarea name="message" id="contact-message" cols="0" rows="7" class="contact__input" required></textarea>
+                    </div>
+
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+
+                    <div>
+                        <button type="submit" class="button button--flex">
+                            Send Message
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    
+   
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--==================== TYPED JS ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Typed.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            var typed = new Typed(".auto-input", {
+                strings: [
+                    "a Web Developer",
+                    "a UI/UX Designer",
+                    "a Frontend Engineer"
+                ],
+                typeSpeed: 100,
+                backSpeed: 60,
+                loop: true,
+                smartBackspace: true
+            });
+        });
+    </script>
+
+    <!--==================== AOS ANIMATION ====================-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // AOS initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                offset: 120,
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false
+            });
+        });
+    </script>
+
+    <!--==================== SWIPER INITIALIZATION ====================-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Swiper
+            var swiper = new Swiper('.portfolio__container', {
+                cssMode: true,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                mousewheel: true,
+                keyboard: true,
+            });
+        });
+    </script>
+</body>
+</html>
